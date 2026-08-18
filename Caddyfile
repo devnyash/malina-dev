@@ -1,0 +1,12 @@
+malina.psychoware.ru {
+	root * {$SITE_ROOT:.}
+	encode zstd gzip
+
+	redir /index.html / 308
+	redir /privacy.html /privacy/ 308
+	redir /consent.html /consent/ 308
+	redir /privacy /privacy/ 308
+	redir /consent /consent/ 308
+
+	file_server
+}

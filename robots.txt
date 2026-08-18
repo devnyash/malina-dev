@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: malina.psychoware.ru
+Sitemap: https://malina.psychoware.ru/sitemap.xml
