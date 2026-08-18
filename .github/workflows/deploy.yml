@@ -1,0 +1,20 @@
+name: deploy-malina
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: 95.164.53.220
+          username: root
+          port: 22
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          host_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPPPd5PPSW8HRkbZMg665i4mQQnY7y27FlLmxBB767wf
+          script: |
+            git -C /opt/malina pull --ff-only origin main
